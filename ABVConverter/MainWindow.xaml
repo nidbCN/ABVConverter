@@ -1,0 +1,37 @@
+﻿<Window x:Class="ABVConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ABVConverter"
+
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+        mc:Ignorable="d"
+        Title="Converter" Height="450" Width="800"
+
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None">
+
+    <Grid>
+        <StackPanel>
+            <materialDesign:Card Padding="16" Margin="32">
+                <StackPanel Margin="16">
+                <TextBlock Margin="16" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">Bilibili AV BV Converter</TextBlock>
+                    <DockPanel>
+                        <TextBlock Margin="8" Style="{DynamicResource MaterialDesignHeadline4TextBlock}">AV号</TextBlock>
+                        <TextBox Margin="8" Style="{DynamicResource MaterialDesignOutlinedTextBox}">AV号</TextBox>
+                    </DockPanel>
+
+                    <TextBox Margin="8" Style="{DynamicResource MaterialDesignOutlinedTextBox}">BV号</TextBox>
+                </StackPanel>
+            </materialDesign:Card>
+        </StackPanel>
+    </Grid>
+
+</Window>
