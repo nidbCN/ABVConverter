@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 
         mc:Ignorable="d"
-        Title="Converter" Height="450" Width="800"
+        Title="Converter" Height="420" Width="600"
 
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -16,19 +16,47 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None">
+        FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" ResizeMode="NoResize">
 
     <Grid>
         <StackPanel>
             <materialDesign:Card Padding="16" Margin="32">
                 <StackPanel Margin="16">
-                <TextBlock Margin="16" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">Bilibili AV BV Converter</TextBlock>
-                    <DockPanel>
-                        <TextBlock Margin="8" Style="{DynamicResource MaterialDesignHeadline4TextBlock}">AV号</TextBlock>
-                        <TextBox Margin="8" Style="{DynamicResource MaterialDesignOutlinedTextBox}">AV号</TextBox>
-                    </DockPanel>
+                    <TextBlock Margin="16" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">Bilibili AV BV Converter</TextBlock>
 
-                    <TextBox Margin="8" Style="{DynamicResource MaterialDesignOutlinedTextBox}">BV号</TextBox>
+                    <TextBox
+                        Margin="16"
+                        materialDesign:HintAssist.Hint="AV号"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        VerticalAlignment="Center" />
+
+                    <TextBox
+                        Margin="16"
+                        materialDesign:HintAssist.Hint="BV号"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        VerticalAlignment="Center" />
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button
+                            Margin="22"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            ToolTip="Resource name: MaterialDesignRaisedButton"
+                            Content="Convert AV to BV" />
+
+
+                        <Button
+                            Margin="22"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            ToolTip="Resource name: MaterialDesignRaisedButton"
+                            Content="Convert BV to AV" />
+
+                        <Button
+                            Margin="22"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            ToolTip="Resource name: MaterialDesignRaisedButton"
+                            Content="Exit" />
+                    </StackPanel>
+
                 </StackPanel>
             </materialDesign:Card>
         </StackPanel>
