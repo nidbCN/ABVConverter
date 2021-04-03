@@ -42,10 +42,19 @@ namespace ABVConverter
 
         private void Main_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            //if (e.LeftButton == MouseButtonState.Pressed)
+            //{
+            //    DragMove();
+            //}
+        }
+
+        private void Main_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            base.OnMouseLeftButtonDown(e);
+
+            // Begin dragging the window
+            DragMove();
         }
     }
 }
