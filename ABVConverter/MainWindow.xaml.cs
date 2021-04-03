@@ -9,27 +9,28 @@ namespace ABVConverter
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Model DataContext { get; set; }
+        public Model CodeDataContext { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new Model()
+            CodeDataContext = new Model()
             {
                 AvCode = "av22123800",
             };
-            VideoCodePanel.DataContext = DataContext;
+
+            VideoCodePanel.DataContext = CodeDataContext;
         }
 
         private void AvToBv_Click(object sender, RoutedEventArgs e)
         {
-            DataContext.ConvertToBv();
-            MessageBox.Show(JsonSerializer.Serialize(DataContext));
+            CodeDataContext.ConvertToBv();
+            MessageBox.Show(JsonSerializer.Serialize(CodeDataContext));
         }
 
         private void BvToAv_Click(object sender, RoutedEventArgs e)
         {
-            DataContext.ConvertToAv();
+            CodeDataContext.ConvertToAv();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

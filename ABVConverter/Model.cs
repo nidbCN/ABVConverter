@@ -17,7 +17,6 @@
             set
             {
                 _bvCode = value;
-                PropertyChanged
             }
         }
 

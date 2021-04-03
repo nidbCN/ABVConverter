@@ -35,9 +35,8 @@ namespace ABVConverter
 
         public static string AvToBv(string av)
         {
-            if (!av.StartsWith("av")
-                ? int.TryParse(av.Substring(3), out var x)
-                : int.TryParse(av, out x)) return null;
+            if (!int.TryParse(av.StartsWith("av") ? av[2..] : av
+                , out var x)) return null;
 
 
             var x1 = (x ^ Xor) + Add;
