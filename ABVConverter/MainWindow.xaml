@@ -23,38 +23,44 @@
             <materialDesign:Card Padding="16" Margin="32">
                 <StackPanel Margin="16">
                     <TextBlock Margin="16" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">Bilibili AV BV Converter</TextBlock>
+                    <StackPanel Margin="10" Name="VideoCodePanel"
+                                DataContext="{Binding {StaticResource DataContext}}">
+                        <TextBox
+                            Margin="16"
+                            Text="{Binding Path=AvCode, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                            materialDesign:HintAssist.Hint="AV号"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center" Cursor="IBeam" />
 
-                    <TextBox
-                        Margin="16"
-                        materialDesign:HintAssist.Hint="AV号"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center" />
+                        <TextBox
+                            Margin="16"
+                            Text="{Binding Path=BvCode, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                            materialDesign:HintAssist.Hint="BV号"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center" Cursor="IBeam" />
+                    </StackPanel>
 
-                    <TextBox
-                        Margin="16"
-                        materialDesign:HintAssist.Hint="BV号"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center" />
 
                     <StackPanel Orientation="Horizontal">
-                        <Button
+                        <Button x:Name="AvToBv"
                             Margin="22"
                             Style="{StaticResource MaterialDesignRaisedButton}"
                             ToolTip="Resource name: MaterialDesignRaisedButton"
-                            Content="Convert AV to BV" />
+                            Content="Convert AV to BV" Click="AvToBv_Click" />
 
 
-                        <Button
+                        <Button x:Name="BvToAv"
                             Margin="22"
                             Style="{StaticResource MaterialDesignRaisedButton}"
                             ToolTip="Resource name: MaterialDesignRaisedButton"
-                            Content="Convert BV to AV" />
+                            Content="Convert BV to AV" Click="BvToAv_Click" />
 
-                        <Button
+                        <Button x:Name="Exit"
                             Margin="22"
+
                             Style="{StaticResource MaterialDesignRaisedButton}"
                             ToolTip="Resource name: MaterialDesignRaisedButton"
-                            Content="Exit" />
+                            Content="Exit" Click="Exit_Click" />
                     </StackPanel>
 
                 </StackPanel>

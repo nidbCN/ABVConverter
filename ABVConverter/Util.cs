@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Windows;
 
 namespace ABVConverter
 {
@@ -22,7 +21,7 @@ namespace ABVConverter
             }
         }
 
-        public static string DeCode(string bv)
+        public static string BvToAv(string bv)
         {
             long r = 0;
 
@@ -34,10 +33,10 @@ namespace ABVConverter
             return "AV" + ((r - Add) ^ Xor);
         }
 
-        public static string EnCode(string av)
+        public static string AvToBv(string av)
         {
-            if (av.StartsWith("av")
-                ? int.TryParse(av.Substring(3, av.Length), out var x)
+            if (!av.StartsWith("av")
+                ? int.TryParse(av.Substring(3), out var x)
                 : int.TryParse(av, out x)) return null;
 
 

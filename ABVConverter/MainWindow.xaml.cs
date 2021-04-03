@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ABVConverter
 {
@@ -20,9 +9,33 @@ namespace ABVConverter
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Model DataContext { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new Model()
+            {
+                AvCode = "av22123800",
+            };
+            VideoCodePanel.DataContext = DataContext;
+        }
+
+        private void AvToBv_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext.ConvertToBv();
+            MessageBox.Show(JsonSerializer.Serialize(DataContext));
+        }
+
+        private void BvToAv_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext.ConvertToAv();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+
+            Environment.Exit(0);
         }
     }
 }
