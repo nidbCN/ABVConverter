@@ -29,8 +29,10 @@ namespace ABVConverter
         /// <returns></returns>
         public static string BvToAv(string bv)
         {
-            long r = 0;
+            if (bv == null) return null;
+            if (!bv.ToUpper().StartsWith("BV")) bv = "BV" + bv;
 
+            long r = 0;
             for (var i = 0; i < 10; ++i)
             {
                 r += Tr[bv[S[i]]] * (long)Math.Pow(58, i);
@@ -51,7 +53,7 @@ namespace ABVConverter
                 , out var x)) return null;
 
             var x1 = (x ^ Xor) + Add;
-            var r = "bv          ".ToCharArray();
+            var r = "BV          ".ToCharArray();
             for (var i = 0; i < 10; ++i)
             {
                 r[S[i]] = Table[(int)(x1 / (long)Math.Pow(58, i) % 58)];

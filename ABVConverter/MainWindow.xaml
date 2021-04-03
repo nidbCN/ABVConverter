@@ -16,7 +16,7 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" ResizeMode="NoResize" MouseMove="Main_MouseMove" MouseLeftButtonDown="Main_MouseLeftButtonDown">
+        FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" ResizeMode="NoResize" MouseLeftButtonDown="Main_MouseLeftButtonDown">
 
     <Grid>
         <StackPanel>

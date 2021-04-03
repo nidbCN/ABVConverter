@@ -17,7 +17,8 @@ namespace ABVConverter
 
             CodeDataContext = new Model()
             {
-                AvCode = "av22123800",
+                AvCode = "av1250357",
+                BvCode = "BV1Sx411T7QQ"
             };
 
             VideoCodePanel.DataContext = CodeDataContext;
@@ -40,20 +41,10 @@ namespace ABVConverter
             Environment.Exit(0);
         }
 
-        private void Main_MouseMove(object sender, MouseEventArgs e)
-        {
-            //if (e.LeftButton == MouseButtonState.Pressed)
-            //{
-            //    DragMove();
-            //}
-        }
-
         private void Main_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
             base.OnMouseLeftButtonDown(e);
 
-            // Begin dragging the window
             DragMove();
         }
     }
