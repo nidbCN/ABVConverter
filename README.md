@@ -21,4 +21,4 @@
 
 开源协议：
 
-GPLv3 Free as freedom.
+GPLv3 Free as in freedom.
