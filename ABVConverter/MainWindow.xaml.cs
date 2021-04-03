@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Input;
 
 namespace ABVConverter
 {
@@ -13,6 +14,7 @@ namespace ABVConverter
         public MainWindow()
         {
             InitializeComponent();
+
             CodeDataContext = new Model()
             {
                 AvCode = "av22123800",
@@ -36,6 +38,14 @@ namespace ABVConverter
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void Main_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }
