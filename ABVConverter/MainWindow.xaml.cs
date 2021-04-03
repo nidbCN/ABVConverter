@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.Json;
 using System.Windows;
 
 namespace ABVConverter
@@ -25,17 +24,17 @@ namespace ABVConverter
         private void AvToBv_Click(object sender, RoutedEventArgs e)
         {
             CodeDataContext.ConvertToBv();
-            MessageBox.Show(JsonSerializer.Serialize(CodeDataContext));
+            BvCodeText.Text = CodeDataContext.BvCode;
         }
 
         private void BvToAv_Click(object sender, RoutedEventArgs e)
         {
             CodeDataContext.ConvertToAv();
+            AvCodeText.Text = CodeDataContext.AvCode;
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
             Environment.Exit(0);
         }
     }

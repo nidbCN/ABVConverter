@@ -2,23 +2,9 @@
 {
     public class Model
     {
-        private string _bvCode;
-        private string _avCode;
+        public string AvCode { get; set; }
 
-        public string AvCode
-        {
-            get => _avCode;
-            set => _avCode = value;
-        }
-
-        public string BvCode
-        {
-            get => _bvCode;
-            set
-            {
-                _bvCode = value;
-            }
-        }
+        public string BvCode { get; set; }
 
         public void ConvertToAv() =>
             AvCode = Util.BvToAv(BvCode);

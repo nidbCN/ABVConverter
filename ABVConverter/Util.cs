@@ -6,6 +6,7 @@ namespace ABVConverter
 {
     public static class Util
     {
+        // Private data.
         private const string Table = "fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF";
         private const int Xor = 177451812;
         private const long Add = 100618342136696320L;
@@ -21,6 +22,11 @@ namespace ABVConverter
             }
         }
 
+        /// <summary>
+        /// Convert BvCode to AvCode
+        /// </summary>
+        /// <param name="bv">Video BvCode</param>
+        /// <returns></returns>
         public static string BvToAv(string bv)
         {
             long r = 0;
@@ -30,17 +36,22 @@ namespace ABVConverter
                 r += Tr[bv[S[i]]] * (long)Math.Pow(58, i);
             }
 
-            return "AV" + ((r - Add) ^ Xor);
+            return "av" + ((r - Add) ^ Xor);
         }
 
+        /// <summary>
+        /// Convert AvCode to BvCode
+        /// </summary>
+        /// <param name="av">Video AvCode</param>
+        /// <returns></returns>
         public static string AvToBv(string av)
         {
-            if (!int.TryParse(av.StartsWith("av") ? av[2..] : av
+
+            if (!int.TryParse(av.ToLower().StartsWith("av") ? av[2..] : av
                 , out var x)) return null;
 
-
             var x1 = (x ^ Xor) + Add;
-            var r = "BV          ".ToCharArray();
+            var r = "bv          ".ToCharArray();
             for (var i = 0; i < 10; ++i)
             {
                 r[S[i]] = Table[(int)(x1 / (long)Math.Pow(58, i) % 58)];
